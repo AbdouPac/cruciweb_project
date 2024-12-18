@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Ne pas rediriger les requêtes vers le dossier vue
+RewriteCond %{REQUEST_URI} ^/vue/.*\.php$ [OR]
+RewriteCond %{REQUEST_URI} ^/vue/$
+
+# Redirige la racine vers vue/index.php
+RewriteRule ^$ vue/index.php [L]
+
+<Files "*.json">
+    Require all denied
+</Files>

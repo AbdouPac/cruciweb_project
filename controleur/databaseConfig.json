@@ -1,0 +1,6 @@
+{
+    "serveur": "localhost",
+    "bdd": "cruciweb",
+    "utilisateur": "root",
+    "mdp": ""
+}
