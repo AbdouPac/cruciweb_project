@@ -1,6 +1,6 @@
 {
     "serveur": "localhost",
-    "bdd": "cruciweb",
-    "utilisateur": "root",
-    "mdp": ""
+    "bdd": "projet",
+    "utilisateur": "projet",
+    "mdp": "tejorp"
 }

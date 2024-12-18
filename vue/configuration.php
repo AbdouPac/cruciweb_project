@@ -13,7 +13,7 @@
     <body>
         <?php include './includes/nav2.php' ?>
 
-        <h2 class="text-centre">Configurations</h2>
+        <h2 class="text-centre" style="color: red">Configurations</h2>
         <p class="d-none erreur" id="erreur">Erreur lors de la configuration de la base de données</p>
         <p class="d-none success" id="success">Configuration enregistrée avec succès</p>
         <form action="../controleur/configuration.php" method="POST" class="form-normal" id="formConfig" onsubmit="submitForm()">
