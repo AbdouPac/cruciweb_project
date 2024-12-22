@@ -1,0 +1,767 @@
+/* Réinitialisation globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* Barre de navigation */
+nav {
+    display: flex;
+    justify-content: space-between; /* Accueil à gauche, Connexion/Inscription à droite */
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+}
+
+nav > a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #0200ff;
+    color: white;
+}
+nav .nav-left {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #414141;
+}
+
+nav .nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-right a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #007bff; /* Boutons bleus */
+    border: 1px solid #0056b3;
+    transition: background-color 0.3s;
+}
+
+nav .nav-right a:hover {
+    background-color: #0056b3; /* Bleu foncé */
+}
+
+/* Centrer la vidéo au milieu */
+.logo {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin: 20px 0; /* Espacement autour de la vidéo */
+}
+
+.logo video {
+    display: block;
+    max-width: 100%; /* Assure une bonne réactivité */
+    height: 300px; /* Hauteur fixe (modifiable selon vos besoins) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre portée */
+}
+
+/* Contenu principal */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alignement en haut */
+    align-items: center;
+    text-align: center;
+    min-height: auto; /* Remplace 70vh par auto pour éviter l'espacement */
+    padding: 20px; /* Ajoute un espace interne */
+    background-color: #ffffff; /* Couleur de fond blanche pour un look épuré */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre portée subtile */
+    border-radius: 10px; /* Coins arrondis pour un look moderne */
+}
+
+.main-div{
+    display: inline-block;
+}
+
+/* Section titre */
+main h1 {
+    margin: 0; /* Supprime toute marge */
+    color: #0200ff; /* Bleu moderne pour le titre */
+    font-size: 2.5em; /* Taille de police plus grande pour attirer l'attention */
+    margin-bottom: 20px; /* Espacement inférieur */
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #414141;
+    margin-bottom: 30px;
+}
+
+/* Styles des éléments de base */
+.text-centre {
+    text-align: center;
+}
+.d-none {
+    display: none;
+}
+.position-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.bouton {
+    height: 40px;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #414141;
+    color: white;
+    cursor: pointer;
+}
+
+.d-flex {
+    display: flex;
+}
+.w-max-content {
+    width: max-content;
+}
+.padding-x-30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Liste des grilles */
+/* Style général pour les grilles */
+
+
+.grilles-list li  {
+    height: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.grilles-list li:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre portée plus prononcée au survol */
+}
+
+.grilles-list li a {
+    text-decoration: none;
+    color: #414141;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px;
+    transition: color 0.3s;
+    border-radius: 5px; /* Coins arrondis pour les liens */
+}
+
+.grilles-list li a:hover {
+    color: #007bff; /* Bleu clair pour le survol */
+    background-color: #f0f0f0; /* Légère couleur de fond au survol */
+}
+
+
+/* Notifications */
+.info, .erreur, .success, .warning {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    width: 400px;
+    text-align: center;
+}
+
+.info {
+    border: 1px solid blue;
+    background-color: rgba(128, 128, 255, 0.2);
+}
+
+.erreur {
+    border: 1px solid red;
+    background-color: rgba(255, 87, 87, 0.2);
+}
+
+.success {
+    border: 1px solid green;
+    background-color: rgba(128, 255, 128, 0.2);
+}
+
+.warning {
+    border: 1px solid yellow;
+    background-color: rgba(255, 251, 128, 0.2);
+}
+
+/* Formulaires */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-normal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 10px auto;
+}
+
+.form-normal > * {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-normal > input, .form-normal > select {
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    height: 30px;
+}
+
+.form-normal > button {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #0200ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Style général pour les grilles */
+.grilles-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chaque ligne de la grille */
+.grilles-list > li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0; /* Élimine les espaces entre les cases */
+}
+
+/* Chaque case de la grille */
+.case {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd; /* Bordure fine et uniforme */
+    font-size: 20px; /* Taille du texte */
+    font-weight: bold;
+    color: #0033cc; /* Couleur du texte */
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffffff; /* Fond blanc par défaut */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Supprime l'espace autour des cases */
+    box-sizing: border-box; /* Inclut la bordure dans les dimensions */
+}
+
+/* Cases noires */
+.case.black {
+    background-color: #000; /* Fond noir */
+    color: transparent; /* Rendre le texte invisible */
+    pointer-events: none; /* Empêche toute interaction */
+}
+
+/* Cases non modifiables */
+.case.fixed {
+    background-color: #f5f5f5; /* Fond gris clair */
+    color: #333; /* Couleur du texte */
+    pointer-events: none; /* Empêche les interactions */
+    font-weight: bold;
+}
+
+/* Ligne de numérotation en haut */
+.numerotation {
+    width: 40px;
+    height: 40px;
+    color: gray; /* Couleur des numéros */
+    font-size: 14px; /* Taille du texte */
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px; /* Centre verticalement */
+    border: 1px solid #ddd; /* Bordure fine */
+    background-color: #f9f9f9; /* Fond gris clair */
+}
+
+
+/* Focus sur une case */
+.case:focus {
+    outline: 2px solid #007bff; /* Bordure bleue au focus */
+    background-color: #e0f0ff; /* Fond bleu clair */
+}
+
+/* Style pour #grille */
+#grille {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: #ffffff; /* Fond blanc */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+/* Style pour les lignes */
+.ligne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0; /* Pas d'espace entre les cases */
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles supplémentaires */
+.d-none {
+    display: none;
+}
+
+.text-centre {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.d-flex {
+    display: flex;
+    margin: 0 300px;
+    padding: 15px;
+    padding-left: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    
+    /* Animation */
+    animation: borderAnimation 1s infinite;
+}
+
+
+/*creation de grille partie 1*/
+
+/* Bouton Suivant dans #partie1 */
+#partie1 .position-right {
+    display: flex;
+    justify-content: center; /* Centre horizontalement le bouton */
+    margin-top: 20px; /* Ajoute un espacement au-dessus */
+}
+
+#partie1 .position-right button {
+    padding: 10px 20px;
+    background-color: #0200ff; /* Bleu vif */
+    color: white;
+    border: 1px solid #0056b3; /* Même bordure que le menu */
+    border-radius: 10px; /* Coins arrondis */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+#partie1 .position-right button:hover {
+    background-color: #0033cc; /* Change de couleur au survol */
+}
+
+#partie1 img {
+    max-width: 250px; /* Largeur maximale */
+    height: auto; /* Maintient les proportions */
+    display: block; /* S'assure que l'image se comporte comme un bloc */
+    margin: 0 auto 20px; /* Centre l'image et ajoute un espacement en bas */
+}
+
+#partie1 .warning {
+    border-radius: 10px; /* Coins arrondis */
+    border: 1px solid #007bff; /* Bordure bleue */
+    background-color: rgba(0, 123, 255, 0.2); /* Fond bleu clair */
+    color: #004085; /* Couleur du texte */
+    padding: 15px; /* Espacement interne */
+    margin: 20px auto; /* Espacement externe */
+    font-size: 0.9rem; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Centrer le texte */
+    max-width: 100%; /* Largeur maximale */
+}
+
+/*partie 2 de creergrille*/
+/* Style pour #partie2 */
+#partie2 {
+    width: 600px; /* Largeur fixe pour un design cohérent */
+    padding: 20px;
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: white; /* Fond blanc */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    margin: 20px auto; /* Centre le conteneur horizontalement */
+    text-align: center; /* Aligne le contenu au centre */
+}
+
+/* Image en haut */
+#partie2 img {
+    max-width: 250px; /* Réduction de la taille de l'image */
+    height: auto; /* Conserve les proportions */
+    margin-bottom: 20px; /* Espacement sous l'image */
+}
+
+/* Titre centré dans #partie2 */
+#partie2 h3.text-centre {
+    margin-bottom: 20px; /* Espacement sous le titre */
+    font-weight: bold;
+}
+
+/* Texte d'information */
+#partie2 .info {
+    border-radius: 10px;
+    border: 1px solid blue;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(0, 123, 255, 0.2); /* Bleu pâle */
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Boutons dans #partie2 */
+#partie2 .space-between {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#partie2 .space-between button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #0200ff; /* Bleu vif */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#partie2 .space-between button:hover {
+    background-color: #0033cc; /* Bleu plus foncé au survol */
+}
+
+/* Style général pour #partie3 */
+#partie3 {
+    width: 600px; /* Largeur fixe pour le bloc */
+    padding: 20px;
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: white; /* Fond blanc */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    margin: 20px auto; /* Centrer horizontalement */
+    text-align: center; /* Alignement centré */
+}
+
+/* Titre centré */
+#partie3 h3.text-centre {
+    margin-bottom: 20px; /* Espacement sous le titre */
+    font-weight: bold;
+}
+
+/* Texte d'information */
+#partie3 .info {
+    border-radius: 10px; /* Coins arrondis */
+    border: 1px solid #007bff; /* Bordure bleue */
+    background-color: rgba(0, 123, 255, 0.2); /* Fond bleu clair */
+    color: #004085; /* Couleur du texte */
+    padding: 15px; /* Espacement interne */
+    margin: 20px auto; /* Espacement externe */
+    font-size: 0.9rem; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Centrer le texte */
+    max-width: 100%; /* Largeur maximale */
+}
+
+/* Conteneur des définitions */
+#partie3 #definitions {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement entre les champs */
+}
+
+/* Boutons dans #partie3 */
+#partie3 .space-between {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les boutons */
+    margin-top: 20px; /* Espacement au-dessus des boutons */
+}
+
+#partie3 .space-between button {
+    padding: 10px 20px;
+    background-color: #0200ff; /* Bleu vif */
+    color: white;
+    border: 1px solid #0056b3; /* Même bordure que le menu */
+    border-radius: 10px; /* Coins arrondis */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    transition: background-color 0.3s; /* Effet de transition au survol */
+    text-align: center;
+}
+
+#partie3 .space-between button:hover {
+    background-color: #0033cc; /* Change de couleur au survol */
+}
+/*grille php*/
+/* Conteneur principal pour la grille et les définitions */
+.grille-definitions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espacement entre la grille et les définitions */
+    padding: 20px;
+    border: 1px solid #ccc; /* Bordure pour le bloc principal */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: white; /* Fond blanc */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    width: 80%; /* Largeur relative au parent */
+    margin: 20px auto; /* Centre le conteneur */
+}
+
+/* Grille à gauche */
+.grille-container {
+    flex: 1; /* Prend de l'espace disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
+}
+
+/* Définir les styles de la grille */
+.grille {
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40px); /* Colonnes dynamiques */
+    gap: 2px; /* Espacement entre les cases */
+}
+
+
+/* Définitions à droite */
+.definitions-container {
+    flex: 1; /* Prend de l'espace disponible */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement entre les sections */
+    font-size: 1rem; /* Taille de police */
+    color: #333;
+}
+
+/* Titres des définitions */
+.definitions-container h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Liste des définitions */
+.definitions-container p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Styles des cases de la grille */
+.case {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Cases noires */
+.case[disabled] {
+    background-color: black;
+    color: white;
+}
+
+/* Boutons sous la grille */
+.grille-container .space-between {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.grille-container .space-between button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Bleu vif */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.grille-container .space-between button:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+}
+.space-between .bouton {
+    background-color: #0200ff;
+    border: 1px solid #0056b3;
+}
+
+.space-between {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 20px; /* Ajoute un espacement entre les boutons */
+    margin-top: 20px; /* Espacement au-dessus des boutons */
+}
+
+
+
+.grilles-list li {
+    display: flex; /* Utilise flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Aligne verticalement au centre */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+    border: 1px solid #ccc; /* Optionnel : ajout d'un bord */
+    padding: 10px; /* Optionnel : espacement interne */
+    border-radius: 5px; /* Optionnel : coins arrondis */
+}
+
+
+
+/* Optionnel : style de la div pour éviter qu'elle affecte le layout */
+.main-div {
+    margin: 0;
+}
+
+
+ /* CSS pour le style du dialogue */
+    .dialog-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .dialog-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 400px;
+    }
+
+/****************************************/
+/****** styles de tous les boutons *****/
+/***************************************/
+    .dialog-buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-rouge{
+        background-color: #ff4d4d; /* Couleur rouge pour indiquer danger/alerte */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn-rouge:hover {
+        background-color: #ff1a1a; /* Couleur plus foncée au survol */
+    }
+
+    .btn-danger {
+        background-color: #d9534f;
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        background-color: #c9302c;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+    /* Style pour le bouton Supprimer */
+    .bouton-rouge {
+        margin-top: 25px;
+        background-color: #ff4d4d; /* Couleur rouge pour indiquer danger/alerte */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .bouton-rouge:hover {
+        background-color: #ff1a1a; /* Couleur plus foncée au survol */
+    }
